@@ -1,4 +1,5 @@
-# grok
+
+# import subprocess
 
 def start_new_game():
     print("Starting a new game...")
@@ -8,14 +9,16 @@ def load_game():
 
 def main():
     while True:
-        choice = input("Do you want to start a new game or load one? (n/l): ").lower()
+        choice = input("Do you want to start a new game or load one? (n/l): ").strip().lower()
         if choice == 'n':
             print(">>> start_new_game()")
             start_new_game()
+            # subprocess.run(['python', 'load_game.py'])
             break
         elif choice == 'l':
             print(">>> load_game()")
             load_game()
+            # subprocess.run(['python', 'new_game.py'])
             break
         else:
             print("Please enter 'n' for new game or 'l' to load a game.")
