@@ -1,3 +1,5 @@
+from bin.initializeBoard import initializeBoard 
+
 def start_new_game():
     print("Starting a new game...")
     move = input("Enter your move: ")
@@ -12,6 +14,7 @@ def main():
         choice = input("Do you want to start a new game or load one? (n/l): ").strip().lower()
         if choice == 'n':
             print(">>> start_new_game()")
+            # print(initializeBoard())
             start_new_game()
             break
         elif choice == 'l':

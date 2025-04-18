@@ -9,6 +9,8 @@ def initializeBoard():
         board (list): A 2D list representing the chess board, where each element is a string.
         The first row contains the white pieces, the second row contains the white pawns,
         the last two rows contain the black pawns and pieces respectively.
+        The white pieces are represented by lowercase letters and the black pieces by uppercase letters.
+        The empty squares are represented by 0.
     """
 
     # Initialize the chess board with empty squares represented by 0
@@ -25,9 +27,21 @@ def initializeBoard():
     board[0][6] = 'n'  # Knight
     board[0][7] = 'r'  # Rook
 
+    # Place the white pawns on the second row
     board[1] = ['p' for _ in range(8)]  # Pawns  
     
+    # Place the black pawns on the seventh row
+    board[6] = ['P' for _ in range(8)]  # Pawns 
+
+    # Place the black pieces on the eighth row
+    board[7][0] = 'R'  # Rook
+    board[7][1] = 'N'  # Knight
+    board[7][2] = 'B'  # Bishop
+    board[7][3] = 'Q'  # Queen
+    board[7][4] = 'K'  # King
+    board[7][5] = 'B'  # Bishop
+    board[7][6] = 'N'  # Knight
+    board[7][7] = 'R'  # Rook 
+
     return board
 
-# if __name__ == "__main__":
-#     initializeBoard()
